@@ -1,4 +1,4 @@
-package com.paymentsys.presentation;
+package com.paymentsys.presentation.usecase;
 
 import com.paymentsys.jpa.Member;
 

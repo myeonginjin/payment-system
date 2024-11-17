@@ -2,7 +2,7 @@ package com.paymentsys.business;
 
 import com.paymentsys.jpa.Member;
 import com.paymentsys.persistence.MemberRepository;
-import com.paymentsys.presentation.MemberUseCase;
+import com.paymentsys.presentation.usecase.MemberUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
