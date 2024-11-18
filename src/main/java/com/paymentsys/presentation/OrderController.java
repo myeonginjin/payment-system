@@ -7,6 +7,7 @@ import com.paymentsys.jpa.Order;
 import com.paymentsys.presentation.usecase.MemberUseCase;
 import com.paymentsys.presentation.usecase.OrderUseCase;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class OrderController {
@@ -27,6 +29,8 @@ public class OrderController {
     public String order(@RequestParam(name = "message", required = false) String message,
                         @RequestParam(name = "orderUid", required = false) String id,
                         Model model) {
+
+        log.info("message: {}   id : {}", message, id);
 
         model.addAttribute("message", message);
         model.addAttribute("orderUid", id);

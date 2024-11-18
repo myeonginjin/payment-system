@@ -14,5 +14,4 @@ public class AppConfig {
     public IamportClient iamportClient() {
         return new IamportClient(apiKey, secretKey);
     }
-
 }

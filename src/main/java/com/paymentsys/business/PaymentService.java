@@ -13,12 +13,14 @@ import com.siot.IamportRestClient.request.CancelData;
 import com.siot.IamportRestClient.response.IamportResponse;
 import com.siot.IamportRestClient.response.Payment;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class PaymentService implements PaymentUseCase {
@@ -47,6 +49,8 @@ public class PaymentService implements PaymentUseCase {
     @Transactional
     public IamportResponse<Payment> paymentByCallback(PaymentCallbackRequest request) {
         try {
+
+            log.info("결제 요청 처리 시작");
 
             try {
                 // 결제 단건 조회(아임포트)

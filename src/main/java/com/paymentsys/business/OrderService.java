@@ -36,7 +36,7 @@ public class OrderService implements OrderUseCase {
         Order order = Order.builder()
                 .member(member)
                 .price(1000L)
-                .itemName("테스트 용품")
+                .itemName("명인이에게 후원")
                 .orderUid(UUID.randomUUID().toString())
                 .payment(payment)
                 .build();

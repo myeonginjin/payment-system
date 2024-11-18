@@ -1,7 +1,8 @@
-package com.paymentsys.presentation.usecase;
+package com.paymentsys.presentation;
 
 import com.paymentsys.domains.dto.PaymentCallbackRequest;
 import com.paymentsys.domains.dto.RequestPayDto;
+import com.paymentsys.presentation.usecase.PaymentUseCase;
 import com.siot.IamportRestClient.response.IamportResponse;
 import com.siot.IamportRestClient.response.Payment;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +32,13 @@ public class PaymentController {
     @ResponseBody
     @PostMapping("/payment")
     public ResponseEntity<IamportResponse<Payment>> validationPayment(@RequestBody PaymentCallbackRequest request) {
+
+        log.info("request  : "+ request.toString());
+
+
         IamportResponse<Payment> iamportResponse = paymentService.paymentByCallback(request);
+
+        log.info("??????????????????");
 
         log.info("결제 응답={}", iamportResponse.getResponse().toString());
 

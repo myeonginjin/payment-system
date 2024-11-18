@@ -2,12 +2,12 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>1달러샵</title>
+    <title>명인 페이 !</title>
     <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
         var IMP = window.IMP;
-        IMP.init("가맹점식별코드를 입력합니다.");
+        IMP.init("imp85423411");
 
         function requestPay() {
 
@@ -51,7 +51,7 @@
                             window.location.href = "/success-payment";
                         })
                     } else {
-                        // alert("success? "+ rsp.success+ ", 결제에 실패하였습니다. 에러 내용: " + JSON.stringify(rsp));
+                        alert("success? "+ rsp.success+ ", 결제에 실패하였습니다. 에러 내용: " + JSON.stringify(rsp));
                         alert('결제 실패!' + rsp);
                         window.location.href = "/fail-payment";
                     }
